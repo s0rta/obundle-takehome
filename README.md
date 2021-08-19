@@ -29,6 +29,10 @@ The only non-page chaning cart add is the add all from category, so the button i
 ### Display logged in user details
 When a user is logged in, handlebars displays the users name, id, email, and if added, phone number.
 
+## Test site info
+Link: https://sortof-commerce.mybigcommerce.com
+Preview Code: rvo0jibwjt
+
 
 #### License
 

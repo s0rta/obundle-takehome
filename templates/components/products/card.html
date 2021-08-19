@@ -60,9 +60,10 @@
            aria-label="{{name}},{{> components/products/product-aria-label}}"
            {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}
         >
-            <div class="card-img-container">
-                {{> components/common/responsive-img
+        <div class="card-img-container">
+            {{> components/common/responsive-img
                     image=image
+                    hover-image=images.1.data
                     class="card-image"
                     fallback_size=theme_settings.productgallery_size
                     lazyload=theme_settings.lazyload_mode

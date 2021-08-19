@@ -16,6 +16,7 @@ category:
 {{/partial}}
 
 {{#partial "page"}}
+{{#if customer.id}} {{customer.name}}, {{customer.id}}, {{customer.email}}{{#if customer.phone}}, {{customer.phone}} {{/if}}{{/if}}
 
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 {{#if category.image}}
@@ -28,10 +29,15 @@ category:
 {{/if}}
 {{#unless theme_settings.hide_category_page_heading }}
     <h1 class="page-heading">{{category.name}}</h1>
+
     {{{region name="category_below_header"}}}
 {{/unless}}
 {{{category.description}}}
 <div class="page">
+    <button id="add-all-to-cart" data-productids="{{#each category.products}}{{this.id}} {{/each}}" class="button button--primary">Add Items to Cart</button>
+    
+    <button id="delete-cart" class="button button--primary delete-cart--hidden">Remove All Items</button>
+    <div class="cart-manipulation-status"></div>
     {{#if category.faceted_search_enabled}}
         <aside class="page-sidebar" id="faceted-search-container">
             {{> components/category/sidebar}}
